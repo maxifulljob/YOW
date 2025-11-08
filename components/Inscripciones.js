@@ -11,7 +11,7 @@ function Inscripciones() {
           "Mail, redes sociales o una consulta por nuestro formulario seran bienvenidos",
         address: {
           icon: <FaMapMarkerAlt />,
-          name: "Emilio Lamarca 2300 (esquina Arregui)",
+          name: "Lascano 4214",
         },
         phone: {
           icon: <FaPhoneAlt />,
