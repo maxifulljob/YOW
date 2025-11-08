@@ -81,7 +81,7 @@ function Inscripciones() {
                       </div>
                       <a
                         className="font-medium border-b border-dark pb-[5px]"
-                        href="https://www.google.com/maps/place/Emilio+Lamarca+2300,+Buenos+Aires/@-34.61094,-58.4953689,17z/data=!4m6!3m5!1s0x95bcc9d86fce786f:0x8234d43fd0e5b9b8!8m2!3d-34.61094!4d-58.4953689!16s%2Fg%2F11fcms9rsf"
+                        href="https://www.google.com/maps/place/Your+Own+Way+Instituto+de+idiomas/@-34.6155879,-58.5002087,20.25z/data=!4m15!1m8!3m7!1s0x95bcc9d86e580fdd:0x8f2e57166dc95c69!2sEmilio+Lamarca+2300,+C1417+Cdad.+Aut%C3%B3noma+de+Buenos+Aires!3b1!8m2!3d-34.6109689!4d-58.4953443!16s%2Fg%2F11y1d1l96m!3m5!1s0x95bcc9d86fc003ef:0x95ecf74fb136b6b1!8m2!3d-34.6154416!4d-58.5000299!16s%2Fg%2F11bzrd93_p?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
                       >
                         {link}
                       </a>
