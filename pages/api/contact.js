@@ -1,60 +1,36 @@
-import { useState } from "react";
+import { Resend } from 'resend';
 
-export default function Contacto() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false });
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Enviando...");
+  const { name, email, message } = req.body;
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+  // validaciones
+  if (!name || !email || !message) {
+    return res.status(400).json({ success: false });
+  }
+
+  try {
+    await resend.emails.send({
+      from: 'Web Instituto <onboarding@resend.dev>',
+      to: ['institutoyourownway@gmail.com'], 
+      subject: 'Nueva consulta desde la web',
+      html: `
+        <h2>Nueva consulta</h2>
+        <p><b>Nombre:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Mensaje:</b> ${message}</p>
+      `,
     });
 
-    const data = await res.json();
-    if (data.success) setStatus("Correo enviado con éxito ✅");
-    else setStatus("Error al enviar el correo ❌");
-  };
+    return res.status(200).json({ success: true });
 
-  return (
-    <div className="max-w-md mx-auto p-6">
-      <h1 className="text-2xl mb-4">Contacto</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input
-          type="text"
-          name="name"
-          placeholder="Tu nombre"
-          onChange={handleChange}
-          required
-          className="border p-2"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Tu correo"
-          onChange={handleChange}
-          required
-          className="border p-2"
-        />
-        <textarea
-          name="message"
-          placeholder="Tu mensaje"
-          onChange={handleChange}
-          required
-          className="border p-2"
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-          Enviar
-        </button>
-      </form>
-      <p className="mt-3">{status}</p>
-    </div>
-  );
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false });
+  }
 }
