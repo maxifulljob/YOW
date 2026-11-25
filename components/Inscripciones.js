@@ -11,7 +11,7 @@ function Inscripciones() {
           "Mail, redes sociales o una consulta por nuestro formulario seran bienvenidos",
         address: {
           icon: <FaMapMarkerAlt />,
-          name: "Lascano 4214",
+          name: "Lascano 4212",
         },
         phone: {
           icon: <FaPhoneAlt />,
