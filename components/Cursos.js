@@ -8,7 +8,7 @@ function Cursos() {
     plans: [
       {
         name: 'Kinder',
-        price: '10',
+        price: '4',
         list: [
           { name: 'vocabulario inicial' },
           { name: 'juegos y fonemas' },
@@ -18,7 +18,7 @@ function Cursos() {
       },
       {
         name: 'Teens',
-        price: '25',
+        price: '6',
         list: [
           { name: 'comunicación constructiva' },
           { name: 'interpretar textos' },
@@ -29,7 +29,7 @@ function Cursos() {
       },
       {
         name: 'Adults',
-        price: '40',
+        price: '10',
         list: [
           { name: 'situaciones profesionales' },
           { name: 'estructuras gramaticales' },
