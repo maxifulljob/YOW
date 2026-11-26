@@ -10,7 +10,7 @@ const Adoption = () => {
           <Image src={Img1} width={542} height={560} alt="" />
         </div>
         <div data-aos="zoom-in-left" className="flex-1 text-cream text-center max-w-md lg:text-left lg:max-w-none">
-          <h2 className="h2">American and British english for everyone!</h2>
+          <h2 className="h2">American and British English for everyone!</h2>
           <p data-aos="zoom-in-right"  className="mb-6">
             Your own way Institute, se inició en el año 2007 Nuestro objetivo de
             enseñanza como establecimiento educativo, es que los alumnos
